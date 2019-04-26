@@ -31,11 +31,11 @@ import javax.persistence.Table;
 		this.userName = userName;
 	}
 
-	public int getUser() {
+	public int getUserId() {
 		return userId;
 	}
 
-	public void setUser(int user) {
+	public void setUserId(int user) {
 		this.userId = user;
 	}
 
