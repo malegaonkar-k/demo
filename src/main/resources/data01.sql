@@ -1,0 +1,4 @@
+
+INSERT INTO USER VALUES (11, 'Ramesh'); 
+
+INSERT INTO USER VALUES (12, 'Ravji'); 

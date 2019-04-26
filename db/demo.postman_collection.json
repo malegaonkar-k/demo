@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "13324080-fc4c-4666-95b1-30a242e37006",
+		"name": "demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8082/demo/hi",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8083/demo/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"demo",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8083/demo/users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8083/demo/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"demo",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8083/demo/users",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"userName\":\"someone\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8083/demo/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"demo",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8083/demo/users/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8083/demo/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"demo",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8083/demo/users/1",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n    {\n        \"userName\": \"Ramesh01\",\n        \"user\": 1\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8083/demo/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"demo",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
