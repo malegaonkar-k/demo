@@ -21,7 +21,8 @@ public class UserServiceImpl implements UserService {
 	public User getUser() {
 		int id =1 ;
 		Optional<User> user = repository.findById(id);
-		return user.orElseThrow(()-> new UserNotFoundException("could not found user of id "+id));
+		return user.get();
+		//return user.orElseThrow(()-> new UserNotFoundException("could not found user of id "+id));
 	}
 
 }
