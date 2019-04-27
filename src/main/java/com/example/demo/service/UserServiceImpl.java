@@ -6,6 +6,7 @@ import java.util.Optional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.domain.User;
@@ -19,6 +20,9 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private UserRepository repository;
+	
+//	@Autowired 
+//	private BCryptPasswordEncoder passwordEncoder;
 
 	@Override
 	public User getUser() {
@@ -42,6 +46,16 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User saveUser(@Valid User user) {
+		
+		/*
+ 		User newUser=new User();
+		user.setUserPassword(passwordEncoder.encode(user.getUserPassword()));
+		BeanUtils.copyProperties(user,newUser);
+		@Valid
+		User tempUser = repository.save(newUser);
+		return tempUser;
+
+		 */
 		@Valid
 		User tempUser = repository.save(user);
 		return tempUser;
