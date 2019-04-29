@@ -20,6 +20,10 @@ import javax.persistence.Table;
 
 	@Column(name = "user_name")
 	private String userName;
+	
+	@Column(name="user_password")
+	private String userPassword;
+	
 
 	public User() {
 
@@ -45,6 +49,14 @@ import javax.persistence.Table;
 
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+
+	public String getUserPassword() {
+		return userPassword;
+	}
+
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
 	}
 
 }
