@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.domain.User;
 import com.example.demo.service.UserService;
+
+
 
 @RestController
 public class UserController {
@@ -29,12 +32,15 @@ public class UserController {
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
 
+	
+	@CrossOrigin(origins ="http://localhost:8083/demo/users")
 	@GetMapping("/users/{id}")
 	public ResponseEntity<User> getUserById(@PathVariable(value = "id") int userId) {
 		User user = userService.getUserById(userId);
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
-
+	
+	@CrossOrigin(origins ="http://localhost:8083/demo/users")
 	@GetMapping("/users")
 	public ResponseEntity<List<User>> getAllUsers() {
 		List<User> users = userService.getUserAll();
