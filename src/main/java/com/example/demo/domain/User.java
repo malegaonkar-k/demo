@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name="User")
@@ -18,9 +19,11 @@ import javax.persistence.Table;
 	@Column(name = "user_id")
 	private int userId;
 
+	@NotEmpty(message = "Please provide a name")
 	@Column(name = "user_name")
 	private String userName;
 	
+	@NotEmpty(message = "Please provide a password")
 	@Column(name="user_password")
 	private String userPassword;
 	
