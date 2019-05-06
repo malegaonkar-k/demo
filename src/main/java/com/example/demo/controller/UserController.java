@@ -19,6 +19,7 @@ import com.example.demo.domain.User;
 import com.example.demo.service.UserService;
 
 
+
 @Validated
 @RestController
 public class UserController {
