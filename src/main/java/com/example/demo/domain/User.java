@@ -38,6 +38,12 @@ import javax.validation.constraints.NotEmpty;
 		this.userName = userName;
 	}
 
+	public User(int i, String n, String p) {
+		this.userId=i;
+		this.userName=n;
+		this.userPassword=p;
+	}
+
 	public int getUserId() {
 		return userId;
 	}
@@ -60,6 +66,28 @@ import javax.validation.constraints.NotEmpty;
 
 	public void setUserPassword(String userPassword) {
 		this.userPassword = userPassword;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + userId;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		if (userId != other.userId)
+			return false;
+		return true;
 	}
 
 }

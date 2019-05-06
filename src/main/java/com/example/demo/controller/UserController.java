@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.domain.User;
+import com.example.demo.service.UserNotFoundException;
 import com.example.demo.service.UserService;
 
 
@@ -36,7 +37,13 @@ public class UserController {
 	
 	@GetMapping("/users/{id}")
 	public ResponseEntity<User> getUserById(@PathVariable(value = "id") int userId) {
-		User user = userService.getUserById(userId);
+		User user=null;
+		try {
+			 user = userService.getUserById(userId);	
+		} catch (UserNotFoundException e) {
+			return new ResponseEntity<User>(user, HttpStatus.NOT_FOUND);
+		} 	
+		
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
 
